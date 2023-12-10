@@ -1,0 +1,7 @@
+export Z="$HOME/.zshrc.local"
+export CDPATH="$HOME:$HOME/Documents:$HOME/Documents/Repos"
+
+alias "::"="gh copilot suggest"
+alias "??"="gh copilot explain"
+
+set -o vi
