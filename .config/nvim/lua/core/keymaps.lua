@@ -44,7 +44,7 @@ map('n', '<leader>no', ':vs ~/.Note<CR>')
 -----------------------------------------------------------
 
 -- VSCode
-map('n', 'C', ':execute "!code -g " . expand("%:p") . ":" . line(".") . ":" . col(".") . " --folder-uri " . getcwd()<CR>')
+map('n', 'C', ':execute "!code -g " . shellescape(expand("%:p")) . ":" . line(".") . ":" . col(".") . " --folder-uri " . shellescape(getcwd())<CR>')
 
 -- Prettier
 map('n', 'F', ":Dispatch! npx prettier '%' --write<CR>")
