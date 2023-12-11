@@ -37,7 +37,7 @@ map('n', '<leader>so', ':source ~/.config/nvim/init.lua<CR>')
 map('i', '<S-Tab>', '<Esc>yiWi<<Esc>Emma></<C-r>"><Esc>`ma')
 map('n', '<leader>cp', ':let @+=expand("%:~")<CR>')
 map('n', '<leader>l', ':vs<CR>')
-map('n', '<leader>no', ':vs ~/.note<CR>')
+map('n', '<leader>no', ':vs ~/.Note<CR>')
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
