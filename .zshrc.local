@@ -6,7 +6,10 @@ alias "??"="gh copilot explain"
 alias "?r"="gh_search_repos"
 
 function gh_search_repos() {
-  gh search repos $* --sort=stars --json fullName,description,stargazersCount,url --template '{{tablerow "STAR" "FULLNAME" "DESCRIPTION" "URL"}}{{range .}}{{tablerow .stargazersCount .fullName .description .url}}{{end}}{{tablerender}}'
+  gh search repos $* \
+    --sort=stars \
+    --json fullName,description,stargazersCount,url \
+    --template '{{tablerow "STAR" "FULLNAME" "DESCRIPTION" "URL"}}{{range .}}{{tablerow .stargazersCount .fullName .description .url}}{{end}}{{tablerender}}'
 }
 
 set -o vi
