@@ -32,7 +32,6 @@ map('n', '<leader>y', '"+y')
 map('v', '<leader>y', '"+y')
 
 map('n', '<leader>,', ':vs $MYVIMRC<CR>')
-map('n', '<leader>so', ':source ~/.config/nvim/init.lua<CR>')
 
 map('i', '<S-Tab>', '<Esc>yiWi<<Esc>Emma></<C-r>"><Esc>`ma')
 map('n', '<leader>cp', ':let @+=expand("%:~")<CR>')
@@ -52,6 +51,8 @@ map('n', 'F', ":Dispatch! npx prettier '%' --write<CR>")
 -- Terminal
 map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
+-- excute the selected text as command
+map('v', 'X', '"xy:execute "!" . @x<CR>')
 
 -- CtrlSF
 map('n', '<C-f>', ':CtrlSF ')
