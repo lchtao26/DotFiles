@@ -3,14 +3,20 @@ export CDPATH="$HOME:$HOME/Documents:$HOME/Documents/Repos"
 
 alias "::"="gh copilot suggest"
 alias "??"="gh copilot explain"
-alias "?r"="gh_search_repos"
-alias "chat"="chatblade -s"
 
-function gh_search_repos() {
+function :repos() {
   gh search repos $* \
     --sort=stars \
     --json fullName,description,stargazersCount,url \
     --template '{{tablerow "STAR" "FULLNAME" "DESCRIPTION" "URL"}}{{range .}}{{tablerow .stargazersCount .fullName .description .url}}{{end}}{{tablerender}}'
+}
+
+function :chat() {
+  chatblade -s $*
+}
+
+function :chatl() {
+  chatblade -s -l $*
 }
 
 set -o vi
