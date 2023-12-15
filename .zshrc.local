@@ -19,5 +19,13 @@ function :chatl() {
   chatblade -s -l $*
 }
 
+function :type {
+  quicktype \
+    --lang typescript \
+    --just-types \
+    --acronym-style original \
+    --src $*
+}
+
 set -o vi
 
