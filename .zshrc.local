@@ -1,8 +1,16 @@
+export NPM_CONFIG_REGISTRY="https://registry.npmmirror.com"
 export Z="$HOME/.zshrc.local"
 export CDPATH="$HOME:$HOME/Documents:$HOME/Documents/Repos"
 
+set -o vi
 alias "::"="gh copilot suggest"
 alias "??"="gh copilot explain"
+
+function :install() {
+  brew install gh && gh extension install github/gh-copilot
+  brew install chatblade
+  npm install -g quicktype 
+}
 
 function :repos() {
   gh search repos $* \
@@ -27,5 +35,4 @@ function :type {
     --src $*
 }
 
-set -o vi
 
