@@ -16,7 +16,7 @@ function :repos() {
   gh search repos $* \
     --sort=stars \
     --json fullName,description,stargazersCount,url \
-    --template '{{tablerow "STAR" "FULLNAME" "DESCRIPTION" "URL"}}{{range .}}{{tablerow .stargazersCount .fullName .description .url}}{{end}}{{tablerender}}'
+    --template '{{tablerow "STAR" "URL" "FULLNAME" "DESCRIPTION"}}{{range .}}{{tablerow .stargazersCount .url .fullName .description}}{{end}}{{tablerender}}'
 }
 
 function :chat() {
@@ -35,4 +35,6 @@ function :type() {
     --src $*
 }
 
-
+function :h() {
+  $* -h | less
+}
