@@ -27,7 +27,7 @@ function :chatl() {
   chatblade -s -l $*
 }
 
-function :type {
+function :type() {
   quicktype \
     --lang typescript \
     --just-types \
