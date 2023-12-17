@@ -33,6 +33,8 @@ map('v', '<leader>y', '"+y')
 
 map('n', '<leader>,', ':vs $MYVIMRC<CR>')
 
+-- excute the selected text as command
+map('v', 'X', ':w !bash<CR>')
 map('i', '<S-Tab>', '<Esc>yiWi<<Esc>Emma></<C-r>"><Esc>`ma')
 map('n', '<leader>cp', ':let @+=expand("%:~")<CR>')
 map('n', '<leader>l', ':vs<CR>')
@@ -51,8 +53,7 @@ map('n', 'F', ":Dispatch! npx prettier '%' --write<CR>")
 -- Terminal
 map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
--- excute the selected text as command
-map('v', 'X', '"xy:execute "!" . @x<CR>')
+
 
 -- CtrlSF
 map('n', '<C-f>', ':CtrlSF ')
