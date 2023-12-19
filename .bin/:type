@@ -1,0 +1,6 @@
+#!/bin/bash
+quicktype \
+  --lang typescript \
+  --just-types \
+  --acronym-style original \
+  --src $*

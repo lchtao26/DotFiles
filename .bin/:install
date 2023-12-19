@@ -1,0 +1,4 @@
+#!/bin/bash
+brew install gh && gh extension install github/gh-copilot
+brew install chatblade
+npm install -g quicktype 

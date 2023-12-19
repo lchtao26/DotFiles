@@ -1,0 +1,5 @@
+#!/bin/bash
+gh search repos $* \
+  --sort=stars \
+  --json fullName,description,stargazersCount,url \
+  --template '{{tablerow "STAR" "URL" "FULLNAME" "DESCRIPTION"}}{{range .}}{{tablerow .stargazersCount .url .fullName .description}}{{end}}{{tablerender}}'

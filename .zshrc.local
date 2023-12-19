@@ -1,40 +1,8 @@
-export NPM_CONFIG_REGISTRY="https://registry.npmmirror.com"
 export Z="$HOME/.zshrc.local"
+export PATH="$PWD/.bins:$PATH"
 export CDPATH="$HOME:$HOME/Documents:$HOME/Documents/Repos"
+export NPM_CONFIG_REGISTRY="https://registry.npmmirror.com"
 
 set -o vi
 alias "::"="gh copilot suggest"
 alias "??"="gh copilot explain"
-
-function :install() {
-  brew install gh && gh extension install github/gh-copilot
-  brew install chatblade
-  npm install -g quicktype 
-}
-
-function :repos() {
-  gh search repos $* \
-    --sort=stars \
-    --json fullName,description,stargazersCount,url \
-    --template '{{tablerow "STAR" "URL" "FULLNAME" "DESCRIPTION"}}{{range .}}{{tablerow .stargazersCount .url .fullName .description}}{{end}}{{tablerender}}'
-}
-
-function :chat() {
-  chatblade -s $*
-}
-
-function :chatl() {
-  chatblade -s -l $*
-}
-
-function :type() {
-  quicktype \
-    --lang typescript \
-    --just-types \
-    --acronym-style original \
-    --src $*
-}
-
-function :h() {
-  $* -h | less
-}
