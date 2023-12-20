@@ -1,5 +1,5 @@
 export Z="$HOME/.zshrc.local"
-export PATH="$PWD/.bins:$PATH"
+export PATH="$HOME/.bin:$PATH"
 export CDPATH="$HOME:$HOME/Documents:$HOME/Documents/Repos"
 export NPM_CONFIG_REGISTRY="https://registry.npmmirror.com"
 
