@@ -1,8 +1,13 @@
-export Z="$HOME/.zshrc.local"
 export PATH="$HOME/.bin:$PATH"
 export CDPATH="$HOME:$HOME/Documents:$HOME/Documents/Repos"
+
 export NPM_CONFIG_REGISTRY="https://registry.npmmirror.com"
+export Z="$HOME/.zshrc.local"
+
+export VISUAL=nvim
+export EDITOR=nvim
 
 set -o vi
+alias vim="nvim"
 alias "::"="gh copilot suggest"
 alias "??"="gh copilot explain"
