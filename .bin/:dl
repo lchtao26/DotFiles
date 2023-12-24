@@ -1,0 +1,2 @@
+#!/bin/bash
+aria2c --dir $HOME/Downloads --max-concurrent-downloads=100 --max-connection-per-server=16 --min-split-size=1M --continue $*
