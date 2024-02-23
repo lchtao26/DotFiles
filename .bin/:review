@@ -1,0 +1,2 @@
+#!/bin/bash
+git log --since='24 hours ago' -p  --author=$*
