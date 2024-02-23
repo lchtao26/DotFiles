@@ -9,6 +9,6 @@ export EDITOR=nvim
 
 set -o vi
 alias vim="nvim"
-alias review="git log --since='24 hours ago' -p  --author="
+alias review="git log --since='24 hours ago' -p  --author "
 alias "::"="gh copilot suggest"
 alias "??"="gh copilot explain"
