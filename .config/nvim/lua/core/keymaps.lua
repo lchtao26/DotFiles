@@ -63,3 +63,7 @@ map('n', '<leader>p', ':FZF --reverse<CR>')
 -- NvimTree
 map('n', '<C-n>', ':NERDTreeToggle<CR>')
 map('n', '<leader>h', ':NERDTreeFind<CR>')
+
+-- Copilot
+map('i', '<C-J>', '<Plug>(copilot-next)')
+map('i', '<C-K>', '<Plug>(copilot-previous)')
