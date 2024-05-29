@@ -1,2 +1,46 @@
 #!/bin/bash
-git log --since='24 hours ago' -p  --author=$*
+
+# 获取过去24小时内有提交的作者列表
+authors=$(git log --since="1 day ago" --format='%aN' | sort -u)
+
+# 检查是否有足够的作者
+if [ -z "$authors" ]; then
+    echo "过去 1 天内没有找到提交的作者。"
+    exit 1
+fi
+
+# 显示作者列表并用数字替代
+echo "过去 1 天内有提交的作者："
+i=1
+author_names=()
+while IFS= read -r author_name; do
+    author_names+=("$author_name")
+    echo "$i. $author_name"
+    ((i++))
+done <<< "$authors"
+
+# 提示用户选择一个数字
+read -p "请选择一个作者（输入对应的数字）： " selected_number
+
+# 检查用户是否输入了有效的数字
+if ! [[ "$selected_number" =~ ^[1-9][0-9]*$ ]] || [ "$selected_number" -gt "${#author_names[@]}" ]; then
+    echo "无效的选择。请输入有效的数字。"
+    exit 1
+fi
+
+# 获取对应的作者名字
+selected_author=${author_names[$((selected_number-1))]}
+
+# 获取过去24小时内由指定作者提交的所有提交哈希
+commit_hashes=$(git log --since="1 day ago" --pretty=format:"%H" --author="$selected_author")
+
+# 检查是否有符合条件的提交
+if [ -z "$commit_hashes" ]; then
+    echo "过去 1 天内没有由 $selected_author 提交的更改。"
+    exit 0
+fi
+
+# 对每个提交运行 git difftool
+for commit in $commit_hashes; do
+    git difftool -y $commit^ $commit
+done
