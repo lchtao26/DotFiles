@@ -77,6 +77,7 @@ return packer.startup(function(use)
   vim.api.nvim_set_var('ctrlsf_populate_qflist', 1)
   vim.api.nvim_set_var('ctrlsf_backend', 'ag')
 
+
   use {
     'hrsh7th/nvim-cmp',
     requires = {
@@ -84,7 +85,8 @@ return packer.startup(function(use)
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
-      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+      'L3MON4D3/LuaSnip'
     },
   }
 

@@ -16,6 +16,8 @@ if not luasnip_status_ok then
   return
 end
 
+require("luasnip.loaders.from_snipmate").lazy_load()
+
 cmp.setup {
   -- Load snippet support
   snippet = {
@@ -49,6 +51,8 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'buffer' },
+
+    { name = 'luasnip' },
     --{ name = 'cmdline' },
   },
 }
