@@ -72,7 +72,8 @@ return packer.startup(function(use)
 
   use 'junegunn/fzf'
   use 'preservim/nerdtree'
-  vim.api.nvim_set_var('NERDTreeWinPos', 'right')
+  vim.api.nvim_set_var('NERDTreeWinPos', 'bottom')
+  vim.api.nvim_set_var('NERDTreeQuitOnOpen', 1)
 
   use 'dyng/ctrlsf.vim'
   vim.api.nvim_set_var('ctrlsf_default_view_mode', 'compact')
