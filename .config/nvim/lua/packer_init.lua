@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-dispatch'
 
+  use 'justinmk/vim-sneak'
   use 'sheerun/vim-polyglot'
   use 'chemzqm/wxapp.vim'
   use 'navarasu/onedark.nvim'
