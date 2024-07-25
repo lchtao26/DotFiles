@@ -39,7 +39,7 @@ map('i', '<S-Tab>', '<Esc>yiWi<<Esc>Emma></<C-r>"><Esc>`ma')
 map('n', '<leader>cp', ':let @+=expand("%:~")<CR>')
 map('n', '<leader>l', ':vs<CR>')
 map('n', '<leader>no', ':vs ~/.Note<CR>')
-map('n', '<leader>E', ':e!<CR>')
+map('n', 'R', ':e!<CR>')
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
