@@ -24,6 +24,8 @@ map('n', 'Q', ':q<CR>')
 map('n', 'L', ':tabnext<CR>')
 map('n', 'H', ':tabprevious<CR>')
 
+map('n', 'R', ':e!<CR>')
+
 map('v', 'L', 'u')
 map('v', 'u', 'y')
 
@@ -45,8 +47,8 @@ map('n', 'R', ':e!<CR>')
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
 
--- VSCode
-map('n', 'C', ':execute "!code -g " . shellescape(expand("%:p")) . ":" . line(".") . ":" . col(".") . " --folder-uri " . shellescape(getcwd())<CR>')
+-- Cursor
+map('n', 'C', ':execute "!cursor -g " . shellescape(expand("%:p")) . ":" . line(".") . ":" . col(".") . " --folder-uri " . shellescape(getcwd())<CR>')
 
 -- Prettier
 map('n', 'F', ":Dispatch! npx prettier '%' --write<CR>")
